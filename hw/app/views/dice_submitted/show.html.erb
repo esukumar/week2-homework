@@ -1,0 +1,21 @@
+ <div class="container">
+<h1 class='page-header'>Dice Game</h1>
+<img src="http://jeffcohenonline.com/dice/<%=@dice1%>.png">
+<img src="http://jeffcohenonline.com/dice/<%=@dice2%>.png">
+<%if @win_bool==true%>
+	<h2>YOU WIN!</h2>
+	<h2><a class="btn btn-success btn-large" href="http://localhost:3000/dice">Start Over</a></h2>
+<%elsif @lose_bool==true%>
+	<h2>YOU LOSE!</h2>
+	<h2><a class="btn btn-success btn-large" href="http://localhost:3000/dice">Start Over</a></h2>
+<%else%>
+	<%if @start=="true"%>
+		<h2>Your goal is now <%= @goal%>.</h2>
+		<h3>Now try to get <%= @goal%> again before you roll a 7.</h3>
+		<h2><a class="btn btn-success btn-large" href="http://localhost:3000/dice_submitted?dice1=<%=@dice1_new%>&dice2=<%=@dice2_new%>&goal=<%=@goal%>&start=false">Roll the dice</a></h2>
+	<%else%>
+		<h2>Your goal is <%=@goal%> but you rolled <%=@roll%>.  You can roll again.</h2>
+		<h2><a class="btn btn-success btn-large" href="http://localhost:3000/dice_submitted?dice1=<%=@dice1_new%>&dice2=<%=@dice2_new%>&goal=<%=@goal%>&start=false">Roll the dice</a></h2>
+	<%end%>
+<%end%>
+</div>

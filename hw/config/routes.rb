@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/contact_submitted' => 'contact_submitted#show'
   get '/rps' => 'rps#play'
   get '/rps_submitted' => 'rps_submitted#show'
+  get '/dice' => 'dice#play'
+  get '/dice_submitted' => 'dice_submitted#show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
